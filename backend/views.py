@@ -1,6 +1,7 @@
 from rest_framework import viewsets, generics
-from backend.models import Number
+from backend.models import Number, Pokemon
 from backend.serializers.NumberSerializer import NumberSerializer
+from backend.serializers.PokemonSerializer import PokemonSerializer
 
 import random
 import string
@@ -21,7 +22,6 @@ class NumberViewSet(viewsets.ModelViewSet):
         return queryset
 
 
-
 class CreateRandomNumber(generics.CreateAPIView):
     serializer_class = NumberSerializer
 
@@ -32,3 +32,8 @@ class CreateRandomNumber(generics.CreateAPIView):
         random_letter = random.choice(string.ascii_uppercase)
         # Guardar el número y la letra aleatorios en la base de datos
         serializer.save(number=random_number, letter=random_letter)
+
+
+class PokemonViewSet(viewsets.ModelViewSet):
+    queryset = Pokemon.objects.all()
+    serializer_class = PokemonSerializer
