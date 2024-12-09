@@ -20,4 +20,4 @@ El proyecto está dividido en dos partes principales:
 - **Frontend**: Implementado con React para mostrar la información de los Pokémon de manera interactiva y amigable.
 
 ### Importante
--**Frontend Incompeto**
+- **Frontend Incompeto**
